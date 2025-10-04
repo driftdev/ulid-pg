@@ -5,8 +5,8 @@ CREATE OR REPLACE FUNCTION gen_ulid()
 AS
 $$
 DECLARE
-    -- Crockford's Base32
-    encoding  bytea = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
+    -- Crockford's Base32 (lowercase)
+    encoding  bytea = '0123456789abcdefghjkmnpqrstvwxyz';
     timestamp bytea = E'\\000\\000\\000\\000\\000\\000';
     output    text  = '';
     unix_time bigint;
@@ -66,7 +66,7 @@ CREATE OR REPLACE FUNCTION check_ulid(
 AS
 $$
 BEGIN
-    IF id ~ '^[0-9A-Z]{26}$' THEN
+    IF id ~ '^[0-9a-z]{26}$' THEN
         RETURN true;
     ELSE
         RETURN false;
