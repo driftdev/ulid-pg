@@ -14,9 +14,9 @@ The ULID is a 26-character string composed of:
 - **Random Suffix** (80 bits): Provides uniqueness via secure randomness.
 
 ```pseudo
-01HXZ6Z9RY3X8DQ5FHP5G0JKYV
-└─────┬─────┘ └─────┬─────┘
-  Timestamp   Random Entropy
+01hxz6z9ry3x8dq5fhp5g0jkyv
+└─────┬─────┘└─────┬─────┘
+  Timestamp  Random Entropy
 ```
 
 - **Lexicographically Sortable**: ULIDs sort by creation time.
@@ -32,7 +32,7 @@ Once you’ve installed the function from `ulid.sql` in your PostgreSQL instance
 ```sql
 -- Generate a ULID
 SELECT gen_ulid();
--- Result: 01HXZ6Z9RY3X8DQ5FHP5G0JKYV
+-- Result: 01hxz6z9ry3x8dq5fhp5g0jkyv
 ```
 
 - Defining ULID
